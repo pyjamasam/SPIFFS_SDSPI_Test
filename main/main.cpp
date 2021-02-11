@@ -13,6 +13,10 @@
 #include "modules/storage/sdcard.h"
 #include "modules/storage/spiffs.h"
 
+#if (ESP_IDF_VERSION_MAJOR == 4 && (ESP_IDF_VERSION_MINOR == 2))
+#else
+#pragma GCC error ESP-IDF 4.2 is required to build
+#endif
 
 #define CORE_0 0
 #define CORE_1 1
